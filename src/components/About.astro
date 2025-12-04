@@ -1,0 +1,52 @@
+---
+const skillCategories = {
+    Lenguajes: ["Rust", "JavaScript"],
+    Frontend: ["Svelte", "Astro", "Tailwind CSS"],
+    Backend: ["Actix-web", "Tauri"],
+    BD: ["PostgreSQL"],
+};
+---
+
+<section
+    id="sobre-mi"
+    class="min-h-screen flex items-center justify-center px-6 py-20"
+>
+    <div class="max-w-6xl w-full grid md:grid-cols-2 gap-8 md:gap-12">
+        <div>
+            <h2 class="text-5xl md:text-6xl font-bold mb-12">Sobre mí</h2>
+            <div class="space-y-6">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Soy estudiante universitario de la carrera de <span
+                        class="no-underline hover:underline"
+                        >Ing. de Sistemas</span
+                    >, me gusta crear soluciones digitales que combinan diseño elegante con funcionalidad robusta. Me especializo en el desarrollo backend con énfasis en el lenguaje <span
+                        class="text-orange-600">Rust</span
+                    >.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Tengo experiencia en proyectos que van desde landing pages hasta aplicaciones web complejas, me enfoco en escribir código limpio, mantenible y escalable.
+                </p>
+            </div>
+        </div>
+
+        <div class="space-y-5">
+            <h3 class="text-2xl font-semibold">Habilidades</h3>
+            {
+                Object.entries(skillCategories).map(([category, skills]) => (
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-500 mb-2">
+                            {category}
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            {skills.map((skill) => (
+                                <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-800 hover:bg-gray-200 transition-colors duration-300 cursor-default">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

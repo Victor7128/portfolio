@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Configurar dark mode con estrategia de clase */
+@variant dark (&:is(.dark *));
+
+/* Color scheme para navegadores */
+:root {
+    color-scheme: light;
+}
+
+:root.dark {
+    color-scheme: dark;
+}
+
+/* Estilos base */
+body {
+    background-color: white;
+    color: rgb(17 24 39);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-color: rgb(3 7 18);
+    color: rgb(243 244 246);
+}
